@@ -20,8 +20,15 @@ var pluckFirstLineFromFile = function (filePath, callback) {
 };
 
 // This function should retrieve the status code of a GET request to `url`
-var getStatusCode = function (url) {
-  // TODO
+// google npm request https://www.npmjs.com/package/request
+var getStatusCode = function (url, callback) {
+  request.get(url, (error, response) => {
+    if (error) {
+      callback(error);
+    } else {
+      callback(null, response.statusCode);
+    }
+  });
 };
 
 // Export these functions so we can test them and reuse them in later exercises
