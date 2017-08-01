@@ -9,8 +9,8 @@ var request = require('request');
 var pluckFirstLineFromFile = function (filePath, callback) {
   //console.log('filePath', filePath);
   fs.readFile(filePath, (err, data) => {
-    // console.log('data.toString() is', data.toString());
-    // console.log('first line of data is', data.toString().split('\n')[0]);
+    // console.log('data.toString() is:', data.toString());
+    // console.log('first line of data is:', data.toString().split('\n')[0]);
     if (err) {
       callback(err);
     } else {
